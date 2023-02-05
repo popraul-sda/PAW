@@ -11,13 +11,6 @@ public class Product implements Serializable {
     private  String price;
 
     private String final_date;
-    @Lob
-    private byte[] image;
-
-
-    public Product(byte[] image) {
-        this.image = image;
-    }
 
     public Product(long id, String name, String price, String final_date) {
         this.id=id;
@@ -32,14 +25,6 @@ public class Product implements Serializable {
 
     public void setFinal_date(String final_date) {
         this.final_date = final_date;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
     }
 
     public Product() {
