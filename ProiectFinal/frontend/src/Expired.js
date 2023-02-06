@@ -1,7 +1,8 @@
 import React,{Component} from "react";
 import Button from 'react-bootstrap/Button';
+import AppNavbar from "./AppNavbar";
 
-class ProductList extends Component {
+class Expired extends Component {
 
     constructor(props) {
         super(props);
@@ -44,20 +45,18 @@ class ProductList extends Component {
         else today += "-0" + date.toString();
         console.log(today);
         const productList = products.map(product => {
-            if(product.final_date > today.toString()) {
+            if(product.final_date < today.toString()) {
                 return <div class="items" key={product.id}>
                     <div className="name">
                         {product.name} </div>
                     <div className="price">PRICE: {product.price}</div>
-                    <Button variant="primary" className="btn_bid ms-2 mb-2"
-                            href={`/products_page/${product.id}`}>Bid</Button>
-                    <Button variant="primary" className="btn_edit ms-2 mb-2"
-                            href={`/prodEdit/${product.id}`}>Edit</Button>
+                    <div className="date">Expire Date: {product.final_date}</div>
                 </div>
             }
         });
         return (
             <div>
+                <AppNavbar />
                 <div className="section2">
                     <div className="container">
                         {productList}
@@ -71,4 +70,4 @@ class ProductList extends Component {
 
 }
 
-export default ProductList;
+export default Expired;

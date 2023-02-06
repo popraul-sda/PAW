@@ -34,6 +34,11 @@ public class ProductServiceController {
         return new ResponseEntity<>(productRepository.findAll().stream().map(o -> new ProductDTO(o.getId(), o.getName(),o.getPrice(), o.getFinal_date())).collect(Collectors.toList()), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/expired")
+    public ResponseEntity<Object> getExpired() {
+        return new ResponseEntity<>(productRepository.findAll().stream().map(o -> new ProductDTO(o.getId(), o.getName(),o.getPrice(), o.getFinal_date())).collect(Collectors.toList()), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/products", method = RequestMethod.POST)
     public ResponseEntity<Object> createProduct(@RequestBody ProductDTO productDTO) {
         productsMap.put(productDTO.getId(), productDTO);

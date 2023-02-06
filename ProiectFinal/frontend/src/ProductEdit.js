@@ -75,7 +75,7 @@ class ProductEdit extends Component {
 
                     <Form.Group className="mb-3 ms-4">
                         <Form.Label>Final Date</Form.Label>
-                        <Form.Control type="text" placeholder="Final Date" name="final_date"
+                        <Form.Control type="date" placeholder="Final Date" name="final_date"
                                       value={item.final_date} onChange={this.handleChange} required/>
                     </Form.Group>
 

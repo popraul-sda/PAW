@@ -12,6 +12,7 @@ import LoggedHome from "./LoggedHome";
 import SocketMessage from "./SocketMessage";
 import App_Stomp from "./App_Stomp";
 import ProductAdd from "./ProductAdd";
+import Expired from "./Expired";
 
 
 class App extends Component {
@@ -34,6 +35,7 @@ class App extends Component {
                 <Switch>
                     <Route path='/' exact={true}><Home/></Route>
                     <Route path='/products' exact={true}><ProductList/></Route>
+                    <Route path='/expired' exact={true}><Expired/></Route>
                     <Route path='/products_page/:id'><Productpage/></Route>
                     <Route path='/products/:id'><ProductAdd/></Route>
                     <Route path='/login'><Login/></Route>
@@ -42,8 +44,6 @@ class App extends Component {
                     <Route path='/logged-home'><LoggedHome/></Route>
                     <Route path='/app'><App_Stomp/></Route>
                     <Route path='/message'><SocketMessage/></Route>
-
-
                 </Switch>
             </Router>
         )

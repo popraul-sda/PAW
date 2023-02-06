@@ -29,6 +29,7 @@ export default class AppNavbar extends Component {
                             <Nav.Link href="/">Home</Nav.Link>
                             <NavDropdown title="Menu" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/products/new">Add Product</NavDropdown.Item>
+                                <NavDropdown.Item href="/expired">Expired Products</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="/login">LogOut</NavDropdown.Item>
                             </NavDropdown>
